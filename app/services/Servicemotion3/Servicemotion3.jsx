@@ -13,7 +13,7 @@ function Servicemotion3() {
     target: container,
     offset: ["start end", "end start"],
   });
-  const y = useTransform(scrollYProgress, [0, 1], [0, -100]);
+  const yd = useTransform(scrollYProgress, [0, 1], [0, -400]);
 
   return (
     <My2SlideInComponent>
@@ -23,12 +23,12 @@ function Servicemotion3() {
           className="flex w-full h-screen overflow-hidden rounded-lg bg-white"
         >
           <motion.div
-            style={{ y }}
-            className="w-full h-screen  relative  items-center justify-center "
+            style={{ y: yd }}
+            className="w-full h-screen flex  relative  items-center justify-center "
           >
-            <div className="flex relative  items-center justify-center h-3/4 w-[70%] rounded-[20px] bg-white shadow-2xl overflow-hidden">
+            <div className="flex relative  items-center justify-center h-3/4 w-[70%] rounded-[20px] bg-white shadow-2xl overflow-hidden top-40">
               <video
-                className=" object-cover rounlded-lg-[20px]"
+                className=" h-full w-full object-cover rounlded-lg-[20px]"
                 muted
                 autoPlay
                 loop

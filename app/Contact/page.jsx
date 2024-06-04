@@ -11,13 +11,14 @@ function Contact() {
       <section className="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-2 rounded-lg">
         <div className="border-[1px] border-white py-2 lg:py-20 col-span-1 lg:col-span-2 rounded-lg text-white hover:bg-white hover:text-black transition duration-300">
           <button className="text-xl lg:text-6xl p-4">
-            Get in<br /> touch
+            Get in
+            <br /> touch
           </button>
         </div>
 
         <div className="border-[1px] border-white py-5 lg:py-20 col-span-1 lg:col-span-3 rounded-lg text-white hover:bg-white hover:text-black transition duration-300">
           <button className="text-xl lg:text-4xl p-4">
-            skoolstudio@gmail.com
+            rohitharish276@gmail.com
           </button>
         </div>
       </section>

@@ -14,7 +14,7 @@ function Servicemotion() {
   const SlideInComponent = useSlideInAnimation();
   return (
     <SlideInComponent>
-      <main className="gallery h-full flex items-center justify-center  ">
+      <main className="gallery h-full flex flex-col items-center justify-center  ">
         <section
           ref={container}
           className="flex w-full h-[100vh] overflow-hidden rounded-lg bg-blue-600 animated-gradient"

@@ -33,9 +33,15 @@ function Servicemotion2() {
         >
           <motion.div
             style={{ y }}
-            className="w-full h-screen left-6 rounded-lg  absolute  "
+            className="flex items-center justify-center w-full h-screen    absolute top-40  rounded-[40px] "
           >
-            <div className="flex items-center justify-center h-[600px] w-[200px] rounded-lg bg-white shadow-md "></div>
+            <div className="flex relative  items-center justify-center h-[70%] w-[70%] rounded-[20px] bg-white shadow-2xl overflow-hidden">
+              <img
+                src="/images/contain.png"
+                alt="image"
+                className=" object-fill w-full  h-full   "
+              />
+            </div>
           </motion.div>
         </section>
         <section
