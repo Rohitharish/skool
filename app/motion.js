@@ -11,7 +11,7 @@ const useSlideInAnimation = (options = {}) => {
       threshold: threshold,
       triggerOnce: true,
     });
-   
+
     const slideInVariants = {
       hidden: {
         y: '20%',

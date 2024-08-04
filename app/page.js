@@ -1,9 +1,9 @@
 "use client";
-import React, { useRef, useEffect } from "react";
-import Link from "next/link";
-import Navbar from "./Navbar";
+import React, { useEffect } from "react";
 import Lenis from "@studio-freight/lenis";
-import Services from "./services/page";
+
+import About from "./About/page";
+import Project from "./Project/Page";
 
 function Home() {
   useEffect(() => {
@@ -19,9 +19,7 @@ function Home() {
 
   return (
     <main className="flex flex-col mx-2 relative">
-      <section className="bg-zinc-800 bg-opacity-60 h-screen rounded-lg my-1 relative">
-        <Services />
-      </section>
+      <Project />
     </main>
   );
 }
