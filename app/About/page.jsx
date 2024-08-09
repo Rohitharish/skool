@@ -16,9 +16,9 @@ gsap.registerPlugin(ScrollTrigger);
 
 function About() {
   return (
-    <>
-      <Ballline />
-      <section className="relative  flex text-white flex-col h-full  w-full bg-zinc-800 bg-opacity-60 rounded-lg ">
+    <main className=" flex h-full ">
+      {/* <Ballline /> */}
+      <section className="relative  flex text-white flex-col h-full  w-full  rounded-lg ">
         {/*eye page */}
         <div className="flex items-center justify-center h-screen w-full bg-black">
           <Main />
@@ -28,22 +28,17 @@ function About() {
         <section className="flex relative flex-col bg-black  h-[400vh]  w-full">
           <Skillshow />
         </section>
-        {/*skills page */}
-        <section className="flex relative flex-row bg-black   h-[400vh]  w-full">
+        {/*skills page*/}
+        <section className="flex relative flex-row bg-black   h-[120vh]  w-full">
           <Moreinfo />
-          <div className="flex w-full items-center justify-center text-4xl">
-            <FadeInText
-              text={`Trust us to elevate your visitors' experience through memorable
-                and immersive experiential design.`}
-            />
-          </div>
         </section>
+
         {/*contact page */}
-        <section className="flex relative flex-col bg-black   h-[60% ]  w-full">
+        <section className="flex  relative flex-col bg-black   h-full w-full ">
           <Contact />
         </section>
       </section>
-    </>
+    </main>
   );
 }
 

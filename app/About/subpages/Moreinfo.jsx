@@ -5,47 +5,62 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 function Moreinfo() {
-  const MRef = useRef(null);
-  const S1Ref = useRef(null);
-  const S2Ref = useRef(null);
-  const S3Ref = useRef(null);
-  const S4Ref = useRef(null);
+  const GRef = useRef(null);
+  const P1Ref = useRef(null);
+  const A1Ref = useRef(null);
+  const IRef = useRef(null);
 
   useEffect(() => {
-    const ContainerM = MRef.current;
-    const Sentence1 = S1Ref.current;
-    const Sentence2 = S2Ref.current;
-    const Sentence3 = S3Ref.current;
-    const Sentence4 = S4Ref.current;
+    const ContainerG = GRef.current;
+    const Paragraph = P1Ref.current;
+    const Age = A1Ref.current;
+    const Image = IRef.current;
 
     const master = gsap.timeline();
 
     const setinitialposition = () => {
-      gsap.set(Sentence1, { yPercent: 0 });
-      gsap.set(Sentence2, { yPercent: 0 });
+      gsap.set(Paragraph, { yPercent: 100 });
+      gsap.set(Age, { yPercent: 0 });
+      gsap.set(Image, { yPercent: 0 });
     };
     const Finalanimation = () => {
-      const tl = gsap.timeline({
-        ease: "power1.inOut",
+      const tl = gsap.timeline();
 
+      tl.to(Paragraph, {
+        yPercent: 0,
         scrollTrigger: {
-          trigger: ContainerM,
-          start: "0%",
-          end: "200%",
-          scrub: true,
-          markers: true,
+          trigger: ContainerG,
+          start: "-10%",
+          end: "-5%",
+          duration: 3,
+          scrub: 2,
         },
       });
-
-      tl.to([Sentence1, Sentence2], {
-        stagger: 0.1,
-        yPercent: 100,
-      });
       tl.to(
-        [Sentence3, Sentence4],
+        Age,
         {
           stagger: 0.1,
           yPercent: -100,
+          scrollTrigger: {
+            trigger: ContainerG,
+            start: "0%",
+            end: "100%",
+            scrub: 3,
+          },
+        },
+        "<"
+      );
+      tl.to(
+        Image,
+        {
+          stagger: 0.1,
+          yPercent: -20,
+          scrollTrigger: {
+            trigger: ContainerG,
+            start: "0%",
+            end: "100%",
+            scrub: 4,
+          },
         },
         "<"
       );
@@ -58,51 +73,55 @@ function Moreinfo() {
   }, []);
 
   return (
-    <section
-      ref={MRef}
-      className="flex sticky top-0 h-[100vh] w-full flex-col items-start justify-center text-[200px] leading-[1] font-[sK-modernist]"
-    >
-      {/* first animation */}
-      <div className="flex flex-row w-full relative items-start justify-center    ">
-        <div className="flex   overflow-hidden  ">
+    <main ref={GRef} className="flex h-full w-full bg-black">
+      <div className="grid grid-cols-12  grid-rows-2  w-full h-full py-[5%] bg-[#D9D9D9] ">
+        {/* first section including about button and marquee */}
+        <section className=" col-span-12 md:col-span-4 lg:col-span-4 border-black border-[1px] ">
+          <div className="flex h-full w-full flex-col">
+            <div className="flex items-center justify-center h-full w-full  ">
+              <span className="flex items-center justify-center text-7xl bg-[#FB1E00] rounded-full p-2">
+                UI DESIGNER
+              </span>
+            </div>
+          </div>
+        </section>
+        {/* first section including about button and marquee */}
+        {/* second one */}
+        <section className="col-span-8 border-black border-[1px] flex items-center justify-center">
           <span
-            ref={S1Ref}
-            className=" relative   flex w-full -translate-y-full  "
+            ref={P1Ref}
+            className="flex items-center justify-center text-5xl text-black w-3/4"
           >
-            w
+            I've always wanted to create new things, unique experiences,
           </span>
-        </div>
-        <div className="flex    overflow-hidden  w-3/4  ">
+        </section>
+        {/* second one */}
+        {/* 23 */}
+        <section className="col-span-4 border-black border-[1px] flex items-center justify-center">
           <span
-            ref={S2Ref}
-            className=" relative flex w-full -translate-y-full  "
+            ref={A1Ref}
+            className="flex items-center justify-center text-8xl text-black w-3/4"
           >
-            e
+            23 Y/O
           </span>
-        </div>
+        </section>
+        {/* 23 */}
+        {/* image  */}
+        <section className="col-span-3 border-black border-[1px]  flex items-center justify-center overflow-hidden">
+          <img
+            ref={IRef}
+            className="h-[600px] w-full object-cover grayscale"
+            src="images/pro.png"
+          />
+        </section>
+        {/* image  */}
+        <section className="col-span-5 border-black border-[1px]  flex items-end justify-center">
+          <span className="flex items-end justify-center text-[110px] text-black w-full">
+            rohit harish
+          </span>
+        </section>
       </div>
-      {/* first animation */}
-      {/* second animation */}
-      <div className="flex flex-row w-full relative items-start justify-center ">
-        <div className="flex   overflow-hidden ">
-          <span
-            ref={S3Ref}
-            className=" relative flex w-full translate-y-full  "
-          >
-            d
-          </span>
-        </div>
-        <div className="flex    overflow-hidden  w-3/4  ">
-          <span
-            ref={S4Ref}
-            className=" relative flex w-full translate-y-full  "
-          >
-            o
-          </span>
-        </div>
-      </div>
-      {/* second animation */}
-    </section>
+    </main>
   );
 }
 

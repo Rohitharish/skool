@@ -24,19 +24,21 @@ export default function Mk() {
 
     gsap.set(maintext.current, { xPercent: xPercent });
     gsap.set(secondtext.current, { xPercent: xPercent });
-    xPercent += 0.08 * direction;
+    xPercent += 0.05 * direction;
     requestAnimationFrame(animation);
   };
 
   return (
     <main
       className="absolute font-archia w-full overflow-hidden"
-      style={{ top: "calc(100vh - 400px)" }}
+      style={{ top: "calc(100vh - 20vh)" }}
     >
-      <div className="relative flex whitespace-nowrap text-white text-[280px]">
-        <p className="">Hello world -</p>
-        <p r className=" absolute  left-[110%]">
-          Hello world -
+      <div className="relative flex flex-row whitespace-nowrap text-white text-[10vw]">
+        <p ref={maintext} className="">
+          - Hello world - Hello world -
+        </p>
+        <p ref={secondtext} className=" absolute   left-[121%]">
+          - Hello world - Hello world -
         </p>
       </div>
     </main>

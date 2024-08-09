@@ -33,7 +33,6 @@ function Skillshow() {
           end: "bottom top",
 
           scrub: 4,
-          markers: true,
         },
       });
 

@@ -3,7 +3,6 @@ import React, { useEffect } from "react";
 import Lenis from "@studio-freight/lenis";
 
 import About from "./About/page";
-import Project from "./Project/Page";
 
 function Home() {
   useEffect(() => {
@@ -18,8 +17,8 @@ function Home() {
   }, []);
 
   return (
-    <main className="flex flex-col mx-2 relative">
-      <Project />
+    <main className="flex h-full  flex-col mx-2 relative bg-white">
+      <About />
     </main>
   );
 }

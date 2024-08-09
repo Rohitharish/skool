@@ -25,7 +25,7 @@ function Ballline() {
         scrollTrigger: {
           trigger: container,
           start: "+=0%",
-          end: "+=1000%",
+          end: "+=500%",
           scrub: true,
         },
       });
