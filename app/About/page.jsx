@@ -20,20 +20,23 @@ function About() {
       {/* <Ballline /> */}
       <section className="relative  flex text-white flex-col h-full  w-full  rounded-lg ">
         {/*eye page */}
-        <div className="flex items-center justify-center h-screen w-full bg-black">
+        <div className="flex items-center justify-center h-full w-full bg-black">
           <Main />
+          <Mk />
         </div>
+
         {/*eye page */}
         {/*skills page */}
         <section className="flex relative flex-col bg-black  h-[400vh]  w-full">
           <Skillshow />
         </section>
         {/*skills page*/}
-        <section className="flex relative flex-row bg-black   h-[120vh]  w-full">
+        <section className="flex relative flex-row bg-black h-full  md:h-[120vh]   lg:h-[120vh]  w-full">
           <Moreinfo />
         </section>
 
         {/*contact page */}
+
         <section className="flex  relative flex-col bg-black   h-full w-full ">
           <Contact />
         </section>

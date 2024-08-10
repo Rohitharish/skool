@@ -9,12 +9,14 @@ function Moreinfo() {
   const P1Ref = useRef(null);
   const A1Ref = useRef(null);
   const IRef = useRef(null);
+  const BGref = useRef(null);
 
   useEffect(() => {
     const ContainerG = GRef.current;
     const Paragraph = P1Ref.current;
     const Age = A1Ref.current;
     const Image = IRef.current;
+    const Backgroundchange = BGref.current;
 
     const master = gsap.timeline();
 
@@ -22,9 +24,21 @@ function Moreinfo() {
       gsap.set(Paragraph, { yPercent: 100 });
       gsap.set(Age, { yPercent: 0 });
       gsap.set(Image, { yPercent: 0 });
+      gsap.set(Backgroundchange, { backgroundColor: "#000000" });
     };
     const Finalanimation = () => {
       const tl = gsap.timeline();
+
+      tl.to(Backgroundchange, {
+        backgroundColor: "#D9D9D9",
+        scrollTrigger: {
+          trigger: ContainerG,
+          start: "-10%",
+          end: "-5%",
+
+          scrub: 2,
+        },
+      });
 
       tl.to(Paragraph, {
         yPercent: 0,
@@ -39,7 +53,6 @@ function Moreinfo() {
       tl.to(
         Age,
         {
-          stagger: 0.1,
           yPercent: -100,
           scrollTrigger: {
             trigger: ContainerG,
@@ -74,7 +87,13 @@ function Moreinfo() {
 
   return (
     <main ref={GRef} className="flex h-full w-full bg-black">
-      <div className="grid grid-cols-12  grid-rows-2  w-full h-full py-[5%] bg-[#D9D9D9] ">
+      <div
+        ref={BGref}
+        className="grid grid-cols-12  grid-rows-2  w-full h-full py-[5%]  "
+      >
+        <div className="absolute bg-[#D9D9D9]   px-4 top-14 text-2xl text-black border-black border rounded-full">
+          About
+        </div>
         {/* first section including about button and marquee */}
         <section className=" col-span-12 md:col-span-4 lg:col-span-4 border-black border-[1px] ">
           <div className="flex h-full w-full flex-col">
@@ -87,27 +106,27 @@ function Moreinfo() {
         </section>
         {/* first section including about button and marquee */}
         {/* second one */}
-        <section className="col-span-8 border-black border-[1px] flex items-center justify-center">
+        <section className="col-span-12 md:col-span-8 lg:col-span-8 border-black border-[1px] flex items-center justify-center overflow-hidden">
           <span
             ref={P1Ref}
-            className="flex items-center justify-center text-5xl text-black w-3/4"
+            className="flex items-center justify-center text-5xl text-black w-[90%] md:w-3/4 lg:w-3/4"
           >
             I've always wanted to create new things, unique experiences,
           </span>
         </section>
         {/* second one */}
         {/* 23 */}
-        <section className="col-span-4 border-black border-[1px] flex items-center justify-center">
+        <section className="col-span-12 md:col-span-4 lg:col-span-4 border-black border-[1px] flex items-center justify-center overflow-hidden">
           <span
             ref={A1Ref}
-            className="flex items-center justify-center text-8xl text-black w-3/4"
+            className="flex items-center justify-center text-6xl md:text-8xl lg:text-8xl text-black w-3/4"
           >
             23 Y/O
           </span>
         </section>
         {/* 23 */}
         {/* image  */}
-        <section className="col-span-3 border-black border-[1px]  flex items-center justify-center overflow-hidden">
+        <section className="col-span-12  md:col-span-3 lg:col-span-3 border-black border-[1px]  flex items-center justify-center overflow-hidden">
           <img
             ref={IRef}
             className="h-[600px] w-full object-cover grayscale"
@@ -115,7 +134,7 @@ function Moreinfo() {
           />
         </section>
         {/* image  */}
-        <section className="col-span-5 border-black border-[1px]  flex items-end justify-center">
+        <section className="col-span-12  md:col-span-5 lg:col-span-5 border-black border-[1px]  flex items-end justify-center">
           <span className="flex items-end justify-center text-[110px] text-black w-full">
             rohit harish
           </span>

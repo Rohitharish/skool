@@ -129,7 +129,7 @@ function Project() {
   }, []);
 
   return (
-    <div className="flex h-full w-full text-white px-10  bg-red-900  my-10">
+    <div className="flex h-full w-full text-white px-10   my-10">
       {/* first project */}
       <div
         ref={PRef}
@@ -163,7 +163,7 @@ function Project() {
         <section className="flex items-center justify-center flex-col h-[60vh] md:h-full lg:h-full w-full overflow-x-hidden ">
           <video
             loop
-            controls
+            autoPlay
             ref={B1Ref}
             className="flex object-cover  h-full w-full bg-white"
             src="/inside.mp4"
@@ -171,7 +171,7 @@ function Project() {
           <div className="flex absolute items-center justify-center h-[100px] md:h-[200px] lg:h-[250px] w-[100px] md:w-[200px] lg:w-[250px] overflow-hidden">
             <video
               loop
-              controls
+              autoPlay
               ref={BS1Ref}
               className="flex object-cover  h-full w-full bg-white"
               src="/log.mp4"

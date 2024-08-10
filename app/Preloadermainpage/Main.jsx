@@ -89,7 +89,7 @@ function Main() {
   }, []);
 
   return (
-    <div className="flex flex-col items-center justify-center ">
+    <div className="flex h-full w-full flex-col items-center justify-center p-[5%] ">
       <div
         ref={RevealRef}
         className="flex flex-col items-center justify-center absolute top-0 h-[100vh] w-full bg-black overflow-hidden  "
@@ -106,6 +106,7 @@ function Main() {
             <span className=" text-xl ">Ciao</span>
           </div>
         </div>
+
         <div className="flex border  space-y-4 items-center justify-center  h-[4px] w-[100px]  overflow-hidden  ">
           <div
             ref={loaderRef}
@@ -124,8 +125,6 @@ function Main() {
           alt="Eye pic"
         />
       </div>
-
-      <Mk />
     </div>
   );
 }

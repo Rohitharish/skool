@@ -30,7 +30,7 @@ export default function Mk() {
 
   return (
     <main
-      className="absolute font-archia w-full overflow-hidden"
+      className="absolute font-archia w-full overflow-x-hidden z-50"
       style={{ top: "calc(100vh - 20vh)" }}
     >
       <div className="relative flex flex-row whitespace-nowrap text-white text-[10vw]">

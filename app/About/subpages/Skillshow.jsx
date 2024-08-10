@@ -32,7 +32,7 @@ function Skillshow() {
           start: "top top",
           end: "bottom top",
 
-          scrub: 4,
+          scrub: 2,
         },
       });
 
@@ -78,8 +78,8 @@ function Skillshow() {
           {/* first division */}
           {/* second division */}
           <section className="flex  w-ful flex-col md:flex-row lg:flex-row space-y-6 md:space-y-0  lg:space-y-0 space-x-0 md:space-x-6  lg:space-x-6">
-            <span className="flex  items-center justify-center invisible md:visible lg:visible">
-              AND
+            <span className="flex  items-center justify-center invisible md:visible lg:visible text-6xl">
+              and
             </span>
             <span className="flex  items-center justify-center text-2xl px-28  md:px-14 lg:px-14 py-4 md:py-0 lg:py-0   border rounded-full">
               GSAP
@@ -88,9 +88,9 @@ function Skillshow() {
             <div className="flex   overflow-hidden center justify-center ">
               <span
                 ref={SRef}
-                className=" relative flex w-full translate-y-full items-center justify-center  "
+                className=" relative flex w-full translate-y-full items-center justify-center text-6xl "
               >
-                DIFFERENT VISUAL TECHNOLOGY
+                different visual technology
               </span>
             </div>
           </section>
@@ -100,9 +100,9 @@ function Skillshow() {
             <div className="flex   overflow-hidden center justify-center ">
               <span
                 ref={TRef}
-                className=" relative flex w-full translate-y-full items-center justify-center  "
+                className=" relative flex w-full translate-y-full items-center justify-center  text-6xl"
               >
-                TO GIVE A SEAMLESS
+                to give a seamless
               </span>
             </div>
             <span className="flex  items-center justify-center text-2xl px-28  md:px-14 lg:px-14 py-4 md:py-0 lg:py-0   border rounded-full">
@@ -118,9 +118,9 @@ function Skillshow() {
             <div className="flex   overflow-hidden center justify-center ">
               <span
                 ref={FRef}
-                className=" relative flex w-full translate-y-full items-center justify-center  "
+                className=" relative flex w-full translate-y-full items-center justify-center  text-5xl"
               >
-                USER EXPERINCE
+                user experince
               </span>
             </div>
           </section>
