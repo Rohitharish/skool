@@ -8,6 +8,12 @@ function Contact() {
   const TWRef = useRef(null);
   const LIRef = useRef(null);
   const GMRef = useRef(null);
+  const border1 = useRef(null);
+  const border2ref = useRef(null);
+  const border3ref = useRef(null);
+  const border4ref = useRef(null);
+  const border5ref = useRef(null);
+  const border6ref = useRef(null);
 
   const textRef = useRef(null);
   const text = "//CONNECT// ";
@@ -19,14 +25,26 @@ function Contact() {
     const linkdin = LIRef.current;
     const Gmail = GMRef.current;
     const text = textRef.current;
+    const border = border1.current;
+    const border2 = border2ref.current;
+    const border3 = border3ref.current;
+    const border4 = border4ref.current;
+    const border5 = border5ref.current;
+    const border6 = border6ref.current;
 
     const master = gsap.timeline();
 
     const setinitialposition = () => {
-      gsap.set(Instagram, { yPercent: 0 });
-      gsap.set(linkdin, { yPercent: 0 });
-      gsap.set(Twitter, { yPercent: 0 });
-      gsap.set(Gmail, { yPercent: 0 });
+      gsap.set(Instagram, { yPercent: 500 });
+      gsap.set(linkdin, { yPercent: 500 });
+      gsap.set(Twitter, { yPercent: 500 });
+      gsap.set(Gmail, { yPercent: 500 });
+      gsap.set(border, { width: "0%" });
+      gsap.set(border2, { height: "0%" });
+      gsap.set(border3, { width: "0%" });
+      gsap.set(border4, { height: "0%" });
+      gsap.set(border5, { height: "0%" });
+      gsap.set(border6, { width: "0%" });
     };
     const Finalanimation = () => {
       const tl = gsap.timeline({
@@ -37,33 +55,83 @@ function Contact() {
           start: "-30%",
           end: "bottom bottom",
           scrub: 5,
-          markers: true,
+
         },
       });
 
       tl.to(Twitter, {
-        yPercent: -100,
+        yPercent: 0,
       });
+      tl.to(linkdin, {
+        yPercent: 0,
+      });
+
+      tl.to(Instagram, {
+        yPercent: 0,
+      });
+      tl.to(Gmail, {
+        yPercent: 0,
+      });
+      return tl;
+    };
+
+    // border animations
+    const borderanimation = () => {
+      const tl = gsap.timeline({
+        ease: "power1.inOut",
+
+        scrollTrigger: {
+          trigger: Container,
+          start: "0%",
+          end: "bottom bottom",
+          scrub: 5,
+
+        },
+      });
+
+      tl.to(border, {
+        width: "100%",
+      });
+
       tl.to(
-        linkdin,
+        border2,
         {
-          yPercent: -100,
+          height: "100%",
+        },
+        "<"
+      );
+      tl.to(
+        border3,
+        {
+          width: "100%",
+        },
+        "<"
+      );
+      tl.to(
+        border4,
+        {
+          height: "100%",
+        },
+        "<"
+      );
+      tl.to(
+        border5,
+        {
+          height: "50%",
+        },
+        "<"
+      );
+      tl.to(
+        border6,
+        {
+          width: "50%",
         },
         "<"
       );
 
-      tl.to(Instagram, {
-        yPercent: -100,
-      });
-      tl.to(
-        Gmail,
-        {
-          yPercent: -100,
-        },
-        "<"
-      );
       return tl;
     };
+    // border animations
 
     const letters = textRef.current.querySelectorAll(".letter");
     {
@@ -86,7 +154,7 @@ function Contact() {
         });
       }
     }
-    master.add(setinitialposition).add(Finalanimation);
+    master.add(setinitialposition).add(Finalanimation).add(borderanimation);
 
     return () => {
       master.kill();
@@ -96,7 +164,7 @@ function Contact() {
   return (
     <section
       ref={ContainerRef}
-      className="flex items-center justify-center flex-col h-[90vh]  "
+      className="flex items-center justify-center flex-col h-[150vh]  bg-black w-full "
     >
       <div className="flex h-1/2 w-full items-center justify-center text-white ">
         <div
@@ -112,40 +180,56 @@ function Contact() {
         </div>
       </div>
       {/* SOCIAL MEDIA */}
-      <div className="grid  grid-cols-2   h-full w-full text-4xl">
-        <div className=" col-span-2 md:col-span-1 lg:col-span-1  border-[.1px] border-l-0 border-b-0  overflow-hidden ">
-          <span
-            ref={LIRef}
-            className="flex h-full w-full items-center p-5 translate-y-full "
-          >
-            Linkdin
-          </span>
+      <section className="flex flex-col md:flex-row lg:flex-row h-full w-full items-start justify-start">
+        <div class="relative grid grid-cols-2 grid-rows-2  h-full w-full md:w-1/2 lg:w-full  ">
+          {/* border animations */}
+          <div
+            ref={border1}
+            className=" absolute h-[1px] w-1/2 bg-gray-600"
+          ></div>
+          <div
+            ref={border2ref}
+            className=" absolute h-full w-[1px] bg-gray-600"
+          ></div>
+          <div
+            ref={border3ref}
+            className=" absolute top-1/2 h-[1px] w-full bg-gray-600"
+          ></div>
+          <div
+            ref={border4ref}
+            className=" absolute right-1/2 h-full w-[1px] bg-gray-600"
+          ></div>
+          <div
+            ref={border5ref}
+            className=" absolute left-full h-1/2 w-[1px] bg-gray-600"
+          ></div>
+          <div
+            ref={border6ref}
+            className=" absolute top-full h-[1px] w-1/2 bg-gray-600"
+          ></div>
+          {/* border animations */}
+          <div class=" text-4xl text-white flex items-center justify-center h-full w-full  overflow-hidden">
+            <span ref={TWRef} className="">
+              Instagram
+            </span>
+          </div>
+          <div class=" text-4xl text-white flex items-center justify-center  overflow-hidden">
+            <span ref={LIRef} className="">
+              Twitter
+            </span>
+          </div>
+          <div class=" text-4xl text-white flex items-center justify-center  overflow-hidden">
+            <span ref={INRef} className="">
+              Linkdin
+            </span>
+          </div>
+          <div class=" text-4xl text-white flex items-center justify-center  overflow-hidden"></div>
         </div>
-        <div className="col-span-2 md:col-span-1 lg:col-span-1  border-[.1px] border-x-0  border-b-0 overflow-hidden">
-          <span
-            ref={TWRef}
-            className="flex h-full w-full items-center p-5 translate-y-full "
-          >
-            Twitter
-          </span>
+        <div className="flex flex-col  h-full w-full items-center justify-center ">
+          <span className="text-white text-xl">rohitharish276@gmail.com</span>
+          <img className=" h-[60%] w-[45%]" src="/3d.png" />
         </div>
-        <div className="col-span-2 md:col-span-1 lg:col-span-1   border-[.1px] border-l-0 overflow-hidden ">
-          <span
-            ref={INRef}
-            className="flex h-full w-full items-center p-5  translate-y-full"
-          >
-            Instagram
-          </span>
-        </div>
-        <div className="col-span-2 md:col-span-1 lg:col-span-1  border-[.1px] border-x-0 overflow-hidden">
-          <span
-            ref={GMRef}
-            className="flex h-full w-full items-center p-5 translate-y-full "
-          >
-            rohitharish@gmail.com
-          </span>
-        </div>
-      </div>
+      </section>
       {/* SOCIAL MEDIA */}
     </section>
   );

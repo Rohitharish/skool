@@ -199,15 +199,14 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
- 
 
   &:nth-child(1) {
     --btn-bg: #da0000;
     --bg: #f22c3a;
   }
   &:nth-child(2) {
-    --btn-bg: #fac300;
-    --bg: #fc6100;
+    --btn-bg: #fff;
+    --bg: #fff;
   }
 }
 
@@ -219,7 +218,7 @@ button {
   min-width: var(--width);
   min-height: var(--height);
   border-radius: var(--height);
-  color: #fff;
+  color: #ffff;
 
   background: rgba(0, 0, 0, 0.3);
   cursor: pointer;
@@ -314,4 +313,8 @@ button {
       transform: scale(1.1);
     }
   }
+}
+
+.section {
+  background: linear-gradient(to right, #fb1e00, #ff5f04);
 }

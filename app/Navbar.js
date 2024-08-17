@@ -17,10 +17,10 @@ const Navbar = () => {
           </Link>
         </div>
         <Link href="/Project">
-          <MenuButton>Work</MenuButton>
+          <MenuButton>Verdant</MenuButton>
         </Link>
-        <Link href="/Contact">
-          <MenuButton>Contact</MenuButton>
+        <Link href="/Project2">
+          <MenuButton>inside</MenuButton>
         </Link>
       </div>
     </main>

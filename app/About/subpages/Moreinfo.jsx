@@ -6,77 +6,63 @@ gsap.registerPlugin(ScrollTrigger);
 
 function Moreinfo() {
   const GRef = useRef(null);
-  const P1Ref = useRef(null);
-  const A1Ref = useRef(null);
+  const SEC1Ref = useRef(null);
+  const SEC2Ref = useRef(null);
+  const L1Ref = useRef(null);
   const IRef = useRef(null);
-  const BGref = useRef(null);
+  const B1ref = useRef(null);
 
   useEffect(() => {
     const ContainerG = GRef.current;
-    const Paragraph = P1Ref.current;
-    const Age = A1Ref.current;
+    const section1 = SEC1Ref.current;
+    const section2 = SEC2Ref.current;
+
+    const line = L1Ref.current;
     const Image = IRef.current;
-    const Backgroundchange = BGref.current;
+    const Border1 = B1ref.current;
 
     const master = gsap.timeline();
 
     const setinitialposition = () => {
-      gsap.set(Paragraph, { yPercent: 100 });
-      gsap.set(Age, { yPercent: 0 });
-      gsap.set(Image, { yPercent: 0 });
-      gsap.set(Backgroundchange, { backgroundColor: "#000000" });
+      gsap.set(section1, { yPercent: 0 });
+      gsap.set(section2, { yPercent: -5 });
+      gsap.set(line, { height: "0%" });
     };
     const Finalanimation = () => {
       const tl = gsap.timeline();
 
-      tl.to(Backgroundchange, {
-        backgroundColor: "#D9D9D9",
+      tl.to(section1, {
+        yPercent: -20,
         scrollTrigger: {
           trigger: ContainerG,
           start: "-10%",
-          end: "-5%",
+          end: "100%",
 
-          scrub: 2,
+          scrub: 1,
         },
       });
-
-      tl.to(Paragraph, {
-        yPercent: 0,
+      tl.to(section2, {
+        yPercent: 5,
         scrollTrigger: {
           trigger: ContainerG,
           start: "-10%",
-          end: "-5%",
-          duration: 3,
-          scrub: 2,
+          end: "100%",
+
+          scrub: 1,
         },
       });
-      tl.to(
-        Age,
-        {
-          yPercent: -100,
-          scrollTrigger: {
-            trigger: ContainerG,
-            start: "0%",
-            end: "100%",
-            scrub: 3,
-          },
+      tl.to(line, {
+        height: "100%",
+        scrollTrigger: {
+          trigger: ContainerG,
+          start: "-10%",
+          end: "100%",
+
+          scrub: 1,
         },
-        "<"
-      );
-      tl.to(
-        Image,
-        {
-          stagger: 0.1,
-          yPercent: -20,
-          scrollTrigger: {
-            trigger: ContainerG,
-            start: "0%",
-            end: "100%",
-            scrub: 4,
-          },
-        },
-        "<"
-      );
+      });
+
+      return tl;
     };
     master.add(setinitialposition).add(Finalanimation);
 
@@ -86,60 +72,65 @@ function Moreinfo() {
   }, []);
 
   return (
-    <main ref={GRef} className="flex h-full w-full bg-black">
-      <div
-        ref={BGref}
-        className="grid grid-cols-12  grid-rows-2  w-full h-full py-[5%]  "
-      >
-        <div className="absolute bg-[#D9D9D9]   px-4 top-14 text-2xl text-black border-black border rounded-full">
-          About
+    <main
+      ref={GRef}
+      className="relative flex flex-col  lg:flex-row h-[150vh] w-full bg-white  overflow-hidden "
+    >
+      {/* section 1 animation */}
+      <section ref={SEC1Ref} className="flex flex-col h-[200vh] w-[120%] ">
+        <div className="flex h-[90%] w-full items-center justify-center section">
+          <span className="text-8xl ">
+            Creative'
+            <br /> dev
+          </span>
         </div>
-        {/* first section including about button and marquee */}
-        <section className=" col-span-12 md:col-span-4 lg:col-span-4 border-black border-[1px] ">
-          <div className="flex h-full w-full flex-col">
-            <div className="flex items-center justify-center h-full w-full  ">
-              <span className="flex items-center justify-center text-7xl bg-[#FB1E00] rounded-full p-2">
-                UI DESIGNER
-              </span>
-            </div>
-          </div>
-        </section>
-        {/* first section including about button and marquee */}
-        {/* second one */}
-        <section className="col-span-12 md:col-span-8 lg:col-span-8 border-black border-[1px] flex items-center justify-center overflow-hidden">
-          <span
-            ref={P1Ref}
-            className="flex items-center justify-center text-5xl text-black w-[90%] md:w-3/4 lg:w-3/4"
-          >
+        <div className="flex items-center justify-center h-full w-full border">
+          <span className="text-5xl  text-black w-3/4">
             I've always wanted to create new things, unique experiences,
           </span>
-        </section>
-        {/* second one */}
-        {/* 23 */}
-        <section className="col-span-12 md:col-span-4 lg:col-span-4 border-black border-[1px] flex items-center justify-center overflow-hidden">
-          <span
-            ref={A1Ref}
-            className="flex items-center justify-center text-6xl md:text-8xl lg:text-8xl text-black w-3/4"
-          >
-            23 Y/O
+        </div>
+        <div className="flex  items-center justify-center h-full w-full border">
+          <span className="text-5xl  text-black w-3/4">
+            <span className="text-6xl  text-black w-3/4">
+              looking for someone
+            </span>
           </span>
-        </section>
-        {/* 23 */}
-        {/* image  */}
-        <section className="col-span-12  md:col-span-3 lg:col-span-3 border-black border-[1px]  flex items-center justify-center overflow-hidden">
-          <img
-            ref={IRef}
-            className="h-[600px] w-full object-cover grayscale"
-            src="images/pro.png"
-          />
-        </section>
-        {/* image  */}
-        <section className="col-span-12  md:col-span-5 lg:col-span-5 border-black border-[1px]  flex items-end justify-center">
-          <span className="flex items-end justify-center text-[110px] text-black w-full">
-            rohit harish
+        </div>
+      </section>
+      {/* section 1 animation */}
+      {/* section 2 animation */}
+      <section ref={SEC2Ref} className="flex flex-col h-[200vh] w-full ">
+        <div className="flex flex-row h-full w-full ">
+          <div className=" flex h-full w-full items-center justify-center">
+            <img
+              className="h-full w-full grayscale object-cover"
+              src="/images/download 1.png"
+            />
+          </div>
+          <div className=" flex flex-col h-full w-full items-center justify-center border">
+            <span className="text-8xl h-full w-full flex items-center justify-center text-black font-[Montserrat] font-400 ">
+              23 y/o
+            </span>
+            <span className="text-3xl  w-full flex items-end justify-end text-black ">
+              india
+            </span>
+          </div>
+        </div>
+        <div className="flex items-center justify-center h-[120%] w-full bg-white border">
+          <span className="text-9xl text-black ">
+            rohit
+            <br /> harish
           </span>
-        </section>
-      </div>
+        </div>
+        <div className="flex h-[80%] w-full "></div>
+      </section>
+      {/* section 2 animation */}
+      <section className="flex items-center justify-center h-full w-[10%]">
+        <div ref={L1Ref} className="h-full w-[1px] bg-black"></div>
+        <span className="flex justify-start w-[20%] h-[5%] bg-white  text-2xl text-black rotate-90">
+          creative
+        </span>
+      </section>
     </main>
   );
 }

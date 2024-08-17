@@ -20,8 +20,8 @@ function Main() {
     const master = gsap.timeline();
     // initiall animation incloding preloader and the main page
     const setInitialPosition = () => {
-      gsap.set(Preloadertext, { yPercent: 0 });
-      gsap.set(Reveal, { yPercent: 0 });
+      gsap.set(Preloadertext, { yPercent: 0, scale: 1 });
+      gsap.set(Reveal, { opacity: 1 });
       gsap.set(loaderbar, { xPercent: 0 });
       gsap.set(Imagecontainer, { scale: 0 });
       gsap.set(Image, { scale: 4 });
@@ -30,25 +30,40 @@ function Main() {
 
     // animation including the final animation
     const Preloaderanimation = () => {
-      const tl = gsap.timeline({
-        ease: "power1.inOut",
-      });
+      const tl = gsap.timeline();
 
       tl.to(loaderbar, {
         xPercent: 100,
+        duration: 5,
       });
       tl.to(loaderbar, {
-        xPercent: 100,
+        xPercent: 200,
+        duration: 5,
       });
 
       tl.to(Preloadertext, {
-        yPercent: -200,
-        duration: 15,
+        yPercent: -100,
+
+        duration: 2,
+        ease: "cubic-bezier(0.1, 0.1, 0.9, 0.9)",
       });
 
-      tl.to(Reveal, {
-        yPercent: -100,
+      tl.to(Preloadertext, {
+        scale: 10,
+
+        duration: 2,
+        ease: "cubic-bezier(0.1, 0.1, 0.9, 0.9)",
       });
+
+      tl.to(
+        Reveal,
+        {
+          opacity: 0,
+          ease: "cubic-bezier(0.1, 0.1, 0.9, 0.9)",
+          duration: 3,
+        },
+        "<"
+      );
       return tl;
     };
 
@@ -81,7 +96,7 @@ function Main() {
     master
       .add(setInitialPosition())
       .add(Preloaderanimation())
-      .add(Mainpageanimation(), "-=0.5");
+      .add(Mainpageanimation(), "-=4");
 
     return () => {
       master.kill();
@@ -89,25 +104,18 @@ function Main() {
   }, []);
 
   return (
-    <div className="flex h-full w-full flex-col items-center justify-center p-[5%] ">
+    <div className="flex h-full w-full flex-col items-center justify-center p-[5%]   ">
       <div
         ref={RevealRef}
-        className="flex flex-col items-center justify-center absolute top-0 h-[100vh] w-full bg-black overflow-hidden  "
+        className="flex flex-col items-center justify-center absolute top-0 h-[100vh] w-full bg-black overflow-hidden  z-[90] "
       >
-        <div className="flex   space-y-4 items-center justify-center  h-[25px]  overflow-hidden  ">
+        <div className="flex   space-y-4 items-center justify-center  h-[50px] w-[200px]  overflow-hidden  ">
           <div ref={PLTRef} className="flex flex-col translate-y-full  ">
-            <span className=" text-xl ">HOLA</span>
-            <span className=" text-xl ">HELLO</span>
-            <span className=" text-xl ">नमस्ते</span>
-            <span className=" text-xl ">Ciao</span>
-            <span className=" text-xl ">HOLA</span>
-            <span className=" text-xl ">HELLO</span>
-            <span className=" text-xl ">नमस्ते</span>
-            <span className=" text-xl ">Ciao</span>
+            <span className=" text-xl h-[20px] w-[20px] bg-white rounded-full"></span>
           </div>
         </div>
 
-        <div className="flex border  space-y-4 items-center justify-center  h-[4px] w-[100px]  overflow-hidden  ">
+        <div className="flex  space-y-4 items-center justify-center  h-[4px] w-[100px]  overflow-hidden  ">
           <div
             ref={loaderRef}
             className="flex h-full w-full flex-col -translate-x-full bg-white  "

@@ -32,7 +32,7 @@ function Skillshow() {
           start: "top top",
           end: "bottom top",
 
-          scrub: 2,
+          scrub: 1,
         },
       });
 
@@ -56,11 +56,11 @@ function Skillshow() {
         ref={CRef}
         className="flex sticky top-0 h-[100vh] w-full flex-col items-center justify-center px-[5%] font-[sk-modernist]"
       >
-        <section className="flex justify-center items-center h-[20%] w-full relative flex-col text-[1rem] md:text-[2.30rem]  lg:text-[2.30rem]  text-white">
+        <section className="flex space-y-1  justify-center items-center h-[20%] w-full relative flex-col text-[1rem] md:text-[2.30rem]  lg:text-[2.30rem]  text-white">
           {/* first division */}
           <section className="flex  w-ful flex-col md:flex-row lg:flex-row space-y-6 md:space-y-0  lg:space-y-0 space-x-0 md:space-x-6  lg:space-x-6">
             <span className="flex  items-center justify-center text-2xl px-28  md:px-14 lg:px-14 py-4 md:py-0 lg:py-0   border rounded-full">
-              GSAP
+              Tailwind css
             </span>
 
             <div className="flex   overflow-hidden center justify-center ">
@@ -106,14 +106,14 @@ function Skillshow() {
               </span>
             </div>
             <span className="flex  items-center justify-center text-2xl px-28  md:px-14 lg:px-14 py-4 md:py-0 lg:py-0   border rounded-full">
-              GSAP
+              REACT-JS
             </span>
           </section>
           {/* third division */}
           {/* fourth division */}
           <section className="flex  w-ful flex-col md:flex-row lg:flex-row space-y-6 md:space-y-0  lg:space-y-0 space-x-0 md:space-x-6  lg:space-x-6">
             <span className="flex  items-center justify-center text-2xl px-28  md:px-14 lg:px-14 py-4 md:py-0 lg:py-0   border rounded-full">
-              GSAP
+              FRAMER-MOTION
             </span>
             <div className="flex   overflow-hidden center justify-center ">
               <span

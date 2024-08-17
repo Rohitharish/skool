@@ -17,7 +17,7 @@ function Project() {
   const Sentence4Ref = useRef(null);
   const textRef = useRef(null);
 
-  const text = "inside";
+  const text = "Verdant";
 
   useEffect(() => {
     const ContainerP = PRef.current;
@@ -32,7 +32,7 @@ function Project() {
 
     //  animatiion these are the initial positon of each component
     const setInitialPosition = () => {
-      gsap.set(box1, { xPercent: -100 });
+      gsap.set(box1, { yPercent: 20 });
       gsap.set(subbox1, { xPercent: 100 });
       gsap.set(letters, { opacity: 0, y: 100 });
       gsap.set(Website, { opacity: 0, y: 100 });
@@ -54,8 +54,8 @@ function Project() {
             duration: 1,
             scrollTrigger: {
               trigger: ContainerP,
-              start: "center 40%",
-              end: "bottom bottom",
+              start: "40% 40%",
+              end: "42% 42%",
               scrub: 5,
             },
           });
@@ -108,8 +108,8 @@ function Project() {
       });
 
       tl.to([box1], {
-        xPercent: 0,
-        duration: 3,
+        yPercent: 0,
+        duration: 2,
       });
       tl.to(
         subbox1,
@@ -129,7 +129,7 @@ function Project() {
   }, []);
 
   return (
-    <div className="flex h-full w-full text-white px-10   my-10">
+    <div className="flex h-full w-full text-white px-5    bg-[#151516]">
       {/* first project */}
       <div
         ref={PRef}
@@ -160,21 +160,25 @@ function Project() {
           {/* website link */}
         </section>
         {/* box animation */}
-        <section className="flex items-center justify-center flex-col h-[60vh] md:h-full lg:h-full w-full overflow-x-hidden ">
+        <section
+          ref={B1Ref}
+          className="flex items-center justify-center flex-col h-[60vh] md:h-full lg:h-full overflow-hidden "
+        >
           <video
-            loop
+            controls
             autoPlay
-            ref={B1Ref}
+            loop
             className="flex object-cover  h-full w-full bg-white"
-            src="/inside.mp4"
+            src="/opti.mp4"
           />
-          <div className="flex absolute items-center justify-center h-[100px] md:h-[200px] lg:h-[250px] w-[100px] md:w-[200px] lg:w-[250px] overflow-hidden">
+          <div className="flex absolute items-center justify-center h-[100px] md:h-[200px] lg:h-[250px] w-[100px] md:w-[200px] lg:w-[250px] overflow-hidden ">
             <video
-              loop
+              controls
               autoPlay
+              loop
               ref={BS1Ref}
               className="flex object-cover  h-full w-full bg-white"
-              src="/log.mp4"
+              src="/Time.mp4"
             />
           </div>
         </section>
@@ -194,8 +198,32 @@ function Project() {
         <section className=" flex items-center justify-center h-full w-full">
           <div className=" flex h-full w-full overflow-hidden items-center justify-center ">
             <div ref={Sentence4Ref} className=" text-sm text-white">
-              TECHNOLOGY-FRAMER MOTION GSAP NEXT JS
+              BRAND IDENTITY
             </div>
+          </div>
+        </section>
+        {/* brand identity */}
+        <section className="h-full w-full flex flex-col items-center justify-center space-y-6">
+          <div className="h-[70vh] w-[60%] bg-slate-400 rounded-md">
+            <img
+              src="/card.png"
+              alt=""
+              className="h-full w-full object-cover"
+            />
+          </div>
+          <div className="h-[70vh] w-[60%] bg-slate-400  rounded-md">
+            <img
+              src="/container.png"
+              alt=""
+              className="h-full w-full object-cover"
+            />
+          </div>
+          <div className="h-[70vh] w-[60%] bg-slate-400  rounded-md">
+            <img
+              src="/phone.png"
+              alt=""
+              className="h-full w-full object-cover"
+            />
           </div>
         </section>
       </div>
