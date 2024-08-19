@@ -1,3 +1,4 @@
+import Contact from "./Components/subpages/Contact";
 import "./globals.css";
 import Navbar from "./Navbar";
 
@@ -12,6 +13,7 @@ export default function RootLayout({ children }) {
       <body className=" font-sk-modernist">
         <Navbar />
         {children}
+        <Contact />
       </body>
     </html>
   );
