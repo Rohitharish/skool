@@ -3,10 +3,10 @@ import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-import Moreinfo from "../Components/subpages/Moreinfo";
+import Moreinfo from "../../Components/subpages/Moreinfo";
 
-import Mk from "../Components/Marqueetrigger.jsx/Mk";
-import Main from "../Components/Preloadermainpage/Main";
+import Mk from "../../Components/Marqueetrigger.jsx/Mk";
+import Main from "../../Components/Preloadermainpage/Main";
 
 gsap.registerPlugin(ScrollTrigger);
 
