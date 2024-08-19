@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect } from "react";
-import Lenis from "@studio-freight/lenis";
+import Lenis from "lenis";
 import About from "./About/page";
 import Contact from "./About/subpages/Contact";
 
