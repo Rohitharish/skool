@@ -181,7 +181,7 @@ function Contact() {
       </div>
       {/* SOCIAL MEDIA */}
       <section className="flex flex-col md:flex-row lg:flex-row h-full w-full items-start justify-start">
-        <div class="relative grid grid-cols-2 grid-rows-2  h-full w-full md:w-1/2 lg:w-full  ">
+        <div className="relative grid grid-cols-2 grid-rows-2  h-full w-full md:w-1/2 lg:w-full  ">
           {/* border animations */}
           <div
             ref={border1}
@@ -213,17 +213,17 @@ function Contact() {
               Instagram
             </span>
           </div>
-          <div class=" text-4xl text-white flex items-center justify-center  overflow-hidden">
+          <div className=" text-4xl text-white flex items-center justify-center  overflow-hidden">
             <span ref={LIRef} className="">
               Twitter
             </span>
           </div>
-          <div class=" text-4xl text-white flex items-center justify-center  overflow-hidden">
+          <div className=" text-4xl text-white flex items-center justify-center  overflow-hidden">
             <span ref={INRef} className="">
               Linkdin
             </span>
           </div>
-          <div class=" text-4xl text-white flex items-center justify-center  overflow-hidden"></div>
+          <div className=" text-4xl text-white flex items-center justify-center  overflow-hidden"></div>
         </div>
         <div className="flex flex-col  h-full w-full items-center justify-center ">
           <span className="text-white text-xl">rohitharish276@gmail.com</span>

@@ -148,12 +148,12 @@ function Project() {
             ))}
           </div>
           {/* website link */}
-          <div class="btn-container rounded-full overflow-clip">
+          <div className="btn-container rounded-full overflow-clip">
             <button ref={Web1Ref}>
-              <span class="text">website</span>
-              <div class="icon-container">
-                <div class="icon icon--left">-</div>
-                <div class="icon icon--right">-</div>
+              <span className="text">website</span>
+              <div className="icon-container">
+                <div className="icon icon--left">-</div>
+                <div className="icon icon--right">-</div>
               </div>
             </button>
           </div>
