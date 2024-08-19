@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 
 export const MenuButton = ({ children }) => {
@@ -12,5 +13,3 @@ export const MenuButton = ({ children }) => {
     </div>
   );
 };
-
-

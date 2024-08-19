@@ -4,8 +4,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import Moreinfo from "./subpages/Moreinfo";
-import Contact from "./subpages/Contact";
-import FadeInText from "../Components/Animatedcomponents/fadein";
+
 import Mk from "../Components/Marqueetrigger.jsx/Mk";
 import Main from "../Preloadermainpage/Main";
 

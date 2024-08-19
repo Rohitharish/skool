@@ -1,6 +1,7 @@
+"use client";
 import gsap from "gsap";
 import React, { useEffect, useRef } from "react";
-import Mk from "../Components/Marqueetrigger.jsx/Mk";
+
 
 function Main() {
   const loaderRef = useRef(null);
