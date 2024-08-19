@@ -129,7 +129,7 @@ function Project() {
   }, []);
 
   return (
-    <div className="flex h-full w-full text-white px-5    bg-[#151516]">
+    <div className="flex h-full w-full text-white px-5    ">
       {/* first project */}
       <div
         ref={PRef}
@@ -169,7 +169,7 @@ function Project() {
             autoPlay
             loop
             className="flex object-cover  h-full w-full bg-white"
-            src="/opti.mp4"
+            src="/space.mp4"
           />
           <div className="flex absolute items-center justify-center h-[100px] md:h-[200px] lg:h-[250px] w-[100px] md:w-[200px] lg:w-[250px] overflow-hidden ">
             <video

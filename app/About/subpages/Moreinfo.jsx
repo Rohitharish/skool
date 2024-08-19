@@ -74,7 +74,7 @@ function Moreinfo() {
   return (
     <main
       ref={GRef}
-      className="relative flex flex-col  lg:flex-row h-[150vh] w-full bg-white  overflow-hidden "
+      className="relative flex flex-col  lg:flex-row h-[150vh] w-full   overflow-hidden   border-[0.5px] border-gray-600"
     >
       {/* section 1 animation */}
       <section ref={SEC1Ref} className="flex flex-col h-[200vh] w-[120%] ">
@@ -84,16 +84,14 @@ function Moreinfo() {
             <br /> dev
           </span>
         </div>
-        <div className="flex items-center justify-center h-full w-full border">
-          <span className="text-5xl  text-black w-3/4">
+        <div className="flex items-center justify-center h-full w-full  border-[0.5px] border-gray-600">
+          <span className="text-5xl  text-white w-3/4">
             I've always wanted to create new things, unique experiences,
           </span>
         </div>
-        <div className="flex  items-center justify-center h-full w-full border">
-          <span className="text-5xl  text-black w-3/4">
-            <span className="text-6xl  text-black w-3/4">
-              looking for someone
-            </span>
+        <div className="flex  items-center justify-center h-full w-full  border-[0.5px] border-gray-600">
+          <span className="text-6xl  text-white w-3/4">
+            GSAP+Framer-motion+Next-js= myWOrk
           </span>
         </div>
       </section>
@@ -104,30 +102,30 @@ function Moreinfo() {
           <div className=" flex h-full w-full items-center justify-center">
             <img
               className="h-full w-full grayscale object-cover"
-              src="/images/download 1.png"
+              src="/images/pro.png"
             />
           </div>
-          <div className=" flex flex-col h-full w-full items-center justify-center border">
-            <span className="text-8xl h-full w-full flex items-center justify-center text-black font-[Montserrat] font-400 ">
+          <div className=" flex flex-col h-full w-full items-center justify-center  border-[0.5px] border-gray-600">
+            <span className="text-8xl h-full w-full flex items-center justify-center text-white font-[Montserrat] font-400 ">
               23 y/o
             </span>
-            <span className="text-3xl  w-full flex items-end justify-end text-black ">
+            <span className="text-3xl  w-full flex items-end justify-end text-white ">
               india
             </span>
           </div>
         </div>
-        <div className="flex items-center justify-center h-[120%] w-full bg-white border">
-          <span className="text-9xl text-black ">
+        <div className="flex items-center justify-center h-[120%] w-full text-white  border-[0.5px] border-gray-600">
+          <span className="text-9xl text-white ">
             rohit
             <br /> harish
           </span>
         </div>
-        <div className="flex h-[80%] w-full "></div>
+        <div className="flex h-[80%] w-full bg-black "></div>
       </section>
       {/* section 2 animation */}
       <section className="flex items-center justify-center h-full w-[10%]">
-        <div ref={L1Ref} className="h-full w-[1px] bg-black"></div>
-        <span className="flex justify-start w-[20%] h-[5%] bg-white  text-2xl text-black rotate-90">
+        <div ref={L1Ref} className="h-full w-[1px] bg-gray-600"></div>
+        <span className="flex justify-start w-[20%] h-[5%] bg-black  text-2xl text-white rotate-90">
           creative
         </span>
       </section>

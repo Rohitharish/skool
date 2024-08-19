@@ -20,7 +20,7 @@ function Main() {
     const master = gsap.timeline();
     // initiall animation incloding preloader and the main page
     const setInitialPosition = () => {
-      gsap.set(Preloadertext, { yPercent: 0, scale: 1 });
+      gsap.set(Preloadertext, { yPercent: 100, scale: 1 });
       gsap.set(Reveal, { opacity: 1 });
       gsap.set(loaderbar, { xPercent: 0 });
       gsap.set(Imagecontainer, { scale: 0 });
@@ -33,10 +33,6 @@ function Main() {
       const tl = gsap.timeline();
 
       tl.to(loaderbar, {
-        xPercent: 100,
-        duration: 5,
-      });
-      tl.to(loaderbar, {
         xPercent: 200,
         duration: 5,
       });
@@ -44,12 +40,13 @@ function Main() {
       tl.to(Preloadertext, {
         yPercent: -100,
 
-        duration: 2,
+        duration: 1,
         ease: "cubic-bezier(0.1, 0.1, 0.9, 0.9)",
       });
 
       tl.to(Preloadertext, {
-        scale: 10,
+        scale: 0,
+        rotate: 360,
 
         duration: 2,
         ease: "cubic-bezier(0.1, 0.1, 0.9, 0.9)",
@@ -62,7 +59,7 @@ function Main() {
           ease: "cubic-bezier(0.1, 0.1, 0.9, 0.9)",
           duration: 3,
         },
-        "<"
+        "-=1"
       );
       return tl;
     };
@@ -104,14 +101,17 @@ function Main() {
   }, []);
 
   return (
-    <div className="flex h-full w-full flex-col items-center justify-center p-[5%]   ">
+    <div className="flex h-full w-full flex-col items-center justify-center    ">
+      <div className="flex h-full w-full  justify-end ">
+        <span className="flex  ">FRONT-END 002</span>
+      </div>
       <div
         ref={RevealRef}
         className="flex flex-col items-center justify-center absolute top-0 h-[100vh] w-full bg-black overflow-hidden  z-[90] "
       >
         <div className="flex   space-y-4 items-center justify-center  h-[50px] w-[200px]  overflow-hidden  ">
-          <div ref={PLTRef} className="flex flex-col translate-y-full  ">
-            <span className=" text-xl h-[20px] w-[20px] bg-white rounded-full"></span>
+          <div ref={PLTRef} className="flex flex-row translate-y-full  ">
+            <span className=" text-xl h-[20px] w-[20px] bg-white "></span>
           </div>
         </div>
 
@@ -124,13 +124,15 @@ function Main() {
       </div>
       <div
         ref={IMCRef}
-        className="flex w-full lg:w-[90%] h-[80vh] lg:h-[90%] overflow-hidden "
+        className="flex items-center justify-center w-full lg:w-[85%] h-[90vh] lg:h-[65vh] overflow-hidden my-[8%] "
       >
-        <img
+        <video
+          autoPlay
+          muted
+          loop
           ref={IMRef}
-          className="w-full h-full object-cover "
-          src="images/eye.png"
-          alt="Eye pic"
+          className="flex items-center justify-center w-full h-full object-cover "
+          src="/space.mp4"
         />
       </div>
     </div>

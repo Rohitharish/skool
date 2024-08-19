@@ -17,10 +17,7 @@ const Navbar = () => {
           </Link>
         </div>
         <Link href="/Project">
-          <MenuButton>Verdant</MenuButton>
-        </Link>
-        <Link href="/Project2">
-          <MenuButton>inside</MenuButton>
+          <MenuButton>Work</MenuButton>
         </Link>
       </div>
     </main>

@@ -35,10 +35,10 @@ export default function Mk() {
     >
       <div className="relative flex flex-row whitespace-nowrap text-white text-[10vw]">
         <p ref={maintext} className="">
-          - Hello world - Hello world -
+          - stunning - animation -
         </p>
         <p ref={secondtext} className=" absolute   left-[121%]">
-          - Hello world - Hello world -
+          - stunning - animation -
         </p>
       </div>
     </main>

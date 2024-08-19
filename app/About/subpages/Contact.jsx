@@ -16,7 +16,7 @@ function Contact() {
   const border6ref = useRef(null);
 
   const textRef = useRef(null);
-  const text = "//CONNECT// ";
+  const text = "[CONNECT] ";
 
   useEffect(() => {
     const Container = ContainerRef.current;
@@ -55,7 +55,6 @@ function Contact() {
           start: "-30%",
           end: "bottom bottom",
           scrub: 5,
-
         },
       });
 
@@ -85,7 +84,6 @@ function Contact() {
           start: "0%",
           end: "bottom bottom",
           scrub: 5,
-
         },
       });
 
@@ -147,8 +145,8 @@ function Contact() {
           duration: 1,
           scrollTrigger: {
             trigger: Container,
-            start: "-30%",
-            end: "bottom bottom",
+            start: "-10%",
+            end: "-5%",
             scrub: 8,
           },
         });
@@ -208,7 +206,7 @@ function Contact() {
             className=" absolute top-full h-[1px] w-1/2 bg-gray-600"
           ></div>
           {/* border animations */}
-          <div class=" text-4xl text-white flex items-center justify-center h-full w-full  overflow-hidden">
+          <div className=" text-4xl text-white flex items-center justify-center h-full w-full  overflow-hidden">
             <span ref={TWRef} className="">
               Instagram
             </span>
