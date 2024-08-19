@@ -132,7 +132,7 @@ function Main() {
           loop
           ref={IMRef}
           className="flex items-center justify-center w-full h-full object-cover "
-          src="/space.mp4"
+          src="/main.mp4"
         />
       </div>
     </div>
