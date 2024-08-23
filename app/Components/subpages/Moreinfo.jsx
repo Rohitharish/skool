@@ -20,8 +20,6 @@ function Moreinfo() {
     const section2 = SEC2Ref.current;
 
     const line = L1Ref.current;
-    const Image = IRef.current;
-    const Border1 = B1ref.current;
 
     const master = gsap.timeline();
 
@@ -76,7 +74,7 @@ function Moreinfo() {
   return (
     <main
       ref={GRef}
-      className="relative flex flex-col  lg:flex-row h-[150vh] w-full   overflow-hidden   border-[0.5px] border-gray-600"
+      className="relative flex flex-col  lg:flex-row h-[150vh] w-full   overflow-hidden  "
     >
       {/* section 1 animation */}
       <section ref={SEC1Ref} className="flex flex-col h-[200vh] w-[120%] ">
@@ -87,12 +85,12 @@ function Moreinfo() {
           </span>
         </div>
         <div className="flex items-center justify-center h-full w-full  border-[0.5px] border-gray-600">
-          <span className="text-5xl  text-white w-3/4">
+          <span className="text-3xl lg:text-5xl  text-white w-3/4">
             I've always wanted to create new things, unique experiences,
           </span>
         </div>
         <div className="flex  items-center justify-center h-full w-full  border-[0.5px] border-gray-600">
-          <span className="text-6xl  text-white w-3/4">
+          <span className="text-3xl lg:text-5xl   text-white w-3/4">
             GSAP+Framer-motion+Next-js= myWOrk
           </span>
         </div>
@@ -108,16 +106,16 @@ function Moreinfo() {
             />
           </div>
           <div className=" flex flex-col h-full w-full items-center justify-center  border-[0.5px] border-gray-600">
-            <span className="text-8xl h-full w-full flex items-center justify-center text-white font-[Montserrat] font-400 ">
+            <span className="text-6xl lg:text-8xl h-full w-full flex items-center justify-center text-white font-[Montserrat] font-400 ">
               23 y/o
             </span>
-            <span className="text-3xl  w-full flex items-end justify-end text-white ">
+            <span className="text-3xl lg:text-5xl   w-full flex items-end justify-end text-white ">
               india
             </span>
           </div>
         </div>
         <div className="flex items-center justify-center h-[120%] w-full text-white  border-[0.5px] border-gray-600">
-          <span className="text-9xl text-white ">
+          <span className=" text-6xl lg:text-9xl text-white ">
             rohit
             <br /> harish
           </span>
@@ -125,8 +123,8 @@ function Moreinfo() {
         <div className="flex h-[80%] w-full bg-black "></div>
       </section>
       {/* section 2 animation */}
-      <section className="flex items-center justify-center h-full w-[10%]">
-        <div ref={L1Ref} className="h-full w-[1px] bg-gray-600"></div>
+      <section className="hidden md:flex lg:flex items-center justify-center h-full w-[10%]  ">
+        <div ref={L1Ref} className="h-full w-[1px] bg-gray-600 "></div>
         <span className="flex justify-start w-[20%] h-[5%] bg-black  text-2xl text-white rotate-90">
           creative
         </span>
