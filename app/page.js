@@ -1,8 +1,9 @@
 "use client";
 import React, { useEffect } from "react";
 import Lenis from "lenis";
+
+import Page from "./pages/Work/page";
 import About from "./pages/About/page";
-import Contact from "./Components/subpages/Contact";
 
 function Home() {
   useEffect(() => {
@@ -17,9 +18,9 @@ function Home() {
   }, []);
 
   return (
-    <main className="flex h-full  flex-col mx-2 relative bg-white">
+    <>
       <About />
-    </main>
+    </>
   );
 }
 

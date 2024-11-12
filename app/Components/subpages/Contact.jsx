@@ -1,160 +1,67 @@
 "use client";
-
-import React from "react";
-import { useRef, useEffect } from "react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import React, { useRef, useEffect } from "react";
 import gsap from "gsap";
+gsap.registerPlugin(ScrollTrigger);
 
 function Contact() {
   const ContainerRef = useRef(null);
-  const INRef = useRef(null);
-  const TWRef = useRef(null);
-  const LIRef = useRef(null);
-  const GMRef = useRef(null);
-  const border1 = useRef(null);
-  const border2ref = useRef(null);
-  const border3ref = useRef(null);
-  const border4ref = useRef(null);
-  const border5ref = useRef(null);
-  const border6ref = useRef(null);
+  const MediaRef = useRef([]);
 
-  const textRef = useRef(null);
-  const text = "[CONNECT] ";
+  const bordersRef = useRef([]);
 
   useEffect(() => {
     const Container = ContainerRef.current;
-    const Instagram = INRef.current;
-    const Twitter = TWRef.current;
-    const linkdin = LIRef.current;
-    const Gmail = GMRef.current;
-    const text = textRef.current;
-    const border = border1.current;
-    const border2 = border2ref.current;
-    const border3 = border3ref.current;
-    const border4 = border4ref.current;
-    const border5 = border5ref.current;
-    const border6 = border6ref.current;
+    const elements = MediaRef.current;
+
+    const borders = bordersRef.current;
 
     const master = gsap.timeline();
 
-    const setinitialposition = () => {
-      gsap.set(Instagram, { yPercent: 500 });
-      gsap.set(linkdin, { yPercent: 500 });
-      gsap.set(Twitter, { yPercent: 500 });
-      gsap.set(Gmail, { yPercent: 500 });
-      gsap.set(border, { width: "0%" });
-      gsap.set(border2, { height: "0%" });
-      gsap.set(border3, { width: "0%" });
-      gsap.set(border4, { height: "0%" });
-      gsap.set(border5, { height: "0%" });
-      gsap.set(border6, { width: "0%" });
-    };
-    const Finalanimation = () => {
-      const tl = gsap.timeline({
-        ease: "power1.inOut",
-
-        scrollTrigger: {
-          trigger: Container,
-          start: "-30%",
-          end: "bottom bottom",
-          scrub: 5,
-        },
-      });
-
-      tl.to(Twitter, {
-        yPercent: 0,
-      });
-      tl.to(linkdin, {
-        yPercent: 0,
-      });
-
-      tl.to(Instagram, {
-        yPercent: 0,
-      });
-      tl.to(Gmail, {
-        yPercent: 0,
-      });
-      return tl;
+    // Set initial positions and styles
+    const setInitialPosition = () => {
+      gsap.set(elements, { yPercent: 500 });
+      gsap.set(borders[0], { width: "0%" });
+      gsap.set([borders[1], borders[3]], { height: "0%" }, "<");
+      gsap.set([borders[2], borders[5]], { width: "0%" }, "<");
+      gsap.set(borders[4], { height: "0%" }, "<");
     };
 
-    // border animations
-    const borderanimation = () => {
-      const tl = gsap.timeline({
-        ease: "power1.inOut",
-
-        scrollTrigger: {
-          trigger: Container,
-          start: "0%",
-          end: "bottom bottom",
-          scrub: 5,
-        },
-      });
-
-      tl.to(border, {
-        width: "100%",
-      });
-
-      tl.to(
-        border2,
-        {
-          height: "100%",
-        },
-        "<"
-      );
-      tl.to(
-        border3,
-        {
-          width: "100%",
-        },
-        "<"
-      );
-      tl.to(
-        border4,
-        {
-          height: "100%",
-        },
-        "<"
-      );
-      tl.to(
-        border5,
-        {
-          height: "50%",
-        },
-        "<"
-      );
-      tl.to(
-        border6,
-        {
-          width: "50%",
-        },
-        "<"
-      );
-
-      return tl;
-    };
-    // border animations
-
-    const letters = textRef.current.querySelectorAll(".letter");
-    {
-      const tl = gsap.timeline({
-        ease: "power1.inOut",
-      });
-      {
-        tl.to(letters, {
-          opacity: 1,
-          y: 0,
-          stagger: 0.4,
-
-          duration: 1,
+    // Animate social media icons
+    const socialMediaAnimation = () => {
+      return gsap
+        .timeline({
           scrollTrigger: {
             trigger: Container,
-            start: "-10%",
-            end: "-5%",
-            scrub: 8,
+            start: "-60%",
+            end: "bottom bottom",
+            scrub: 5,
           },
-        });
-      }
-    }
-    master.add(setinitialposition).add(Finalanimation).add(borderanimation);
+        })
+        .to(elements, { yPercent: 0, stagger: 0.3 });
+    };
+
+    // Border animations
+    const borderAnimation = () => {
+      return gsap
+        .timeline({
+          scrollTrigger: {
+            trigger: Container,
+            start: "-5%",
+            end: "-1%",
+            scrub: 5,
+          },
+        })
+        .to(borders[0], { width: "100%" })
+        .to([borders[1], borders[3]], { height: "100%" }, "<")
+        .to([borders[2], borders[5]], { width: "100%" }, "<")
+        .to(borders[4], { height: "50%" }, "<");
+    };
+
+    master
+      .add(setInitialPosition)
+      .add(socialMediaAnimation)
+      .add(borderAnimation);
 
     return () => {
       master.kill();
@@ -164,70 +71,51 @@ function Contact() {
   return (
     <section
       ref={ContainerRef}
-      className="flex items-center justify-center flex-col h-[150vh]  bg-black w-full "
+      className="flex items-center justify-center flex-col h-[100vh] bg-black w-full  "
     >
-      <div className="flex h-1/2 w-full items-center justify-center text-white ">
-        <div
-          ref={textRef}
-          className=" flex  h-full w-full overflow-hidden justify-center items-center
-             text-4xl  md:text-6xl lg:text-[200px]"
-        >
-          {text.split("").map((letter, index) => (
-            <span key={index} className="letter translate-y-full">
-              {letter}
-            </span>
-          ))}
-        </div>
-      </div>
       {/* SOCIAL MEDIA */}
       <section className="flex flex-col md:flex-row lg:flex-row h-full w-full items-start justify-start">
-        <div className="relative grid grid-cols-2 grid-rows-2  h-full w-full md:w-1/2 lg:w-full  ">
+        <div className="relative grid grid-cols-2 grid-rows-2 h-full w-full md:w-1/2 lg:w-full">
           {/* border animations */}
           <div
-            ref={border1}
-            className=" absolute h-[1px] w-1/2 bg-gray-600"
+            ref={(el) => (bordersRef.current[0] = el)}
+            className="absolute h-[1px] w-1/2 bg-gray-600"
           ></div>
           <div
-            ref={border2ref}
-            className=" absolute h-full w-[1px] bg-gray-600"
+            ref={(el) => (bordersRef.current[1] = el)}
+            className="absolute h-full w-[1px] bg-gray-600"
           ></div>
           <div
-            ref={border3ref}
-            className=" absolute top-1/2 h-[1px] w-full bg-gray-600"
+            ref={(el) => (bordersRef.current[2] = el)}
+            className="absolute top-1/2 h-[1px] w-full bg-gray-600"
           ></div>
           <div
-            ref={border4ref}
-            className=" absolute right-1/2 h-full w-[1px] bg-gray-600"
+            ref={(el) => (bordersRef.current[3] = el)}
+            className="absolute right-1/2 h-full w-[1px] bg-gray-600"
           ></div>
           <div
-            ref={border5ref}
-            className=" absolute left-full h-1/2 w-[1px] bg-gray-600"
+            ref={(el) => (bordersRef.current[4] = el)}
+            className="absolute left-full h-1/2 w-[1px] bg-gray-600"
           ></div>
           <div
-            ref={border6ref}
-            className=" absolute top-full h-[1px] w-1/2 bg-gray-600"
+            ref={(el) => (bordersRef.current[5] = el)}
+            className="absolute top-full h-[1px] w-1/2 bg-gray-600"
           ></div>
           {/* border animations */}
-          <div className=" text-4xl text-white flex items-center justify-center h-full w-full  overflow-hidden">
-            <span ref={TWRef} className="">
-              Instagram
-            </span>
+          <div className="text-4xl text-white flex items-center justify-center h-full w-full overflow-hidden">
+            <span ref={(el) => (MediaRef.current[0] = el)}>Twitter</span>
           </div>
-          <div className=" text-4xl text-white flex items-center justify-center  overflow-hidden">
-            <span ref={LIRef} className="">
-              Twitter
-            </span>
+          <div className="text-4xl text-white flex items-center justify-center overflow-hidden">
+            <span ref={(el) => (MediaRef.current[1] = el)}>LinkedIn</span>
           </div>
-          <div className=" text-4xl text-white flex items-center justify-center  overflow-hidden">
-            <span ref={INRef} className="">
-              Linkdin
-            </span>
+          <div className="text-4xl text-white flex items-center justify-center overflow-hidden">
+            <span ref={(el) => (MediaRef.current[2] = el)}>Instagram</span>
           </div>
-          <div className=" text-4xl text-white flex items-center justify-center  overflow-hidden"></div>
+          <div className="text-4xl text-white flex items-center justify-center overflow-hidden"></div>
         </div>
-        <div className="flex flex-col  h-full w-full items-center justify-center ">
+        <div className="flex flex-col h-full w-full items-center justify-center  border-gray-600 border-[.5px]">
           <span className="text-white text-xl">rohitharish276@gmail.com</span>
-          <img className=" h-[60%] w-[45%]" src="/3d.png" />
+          <img className="h-[60%] w-[45%]" src="/3d.png" />
         </div>
       </section>
       {/* SOCIAL MEDIA */}

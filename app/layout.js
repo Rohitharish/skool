@@ -1,6 +1,6 @@
+import Navbar from "./Components/Navbar/Navbar";
 import Contact from "./Components/subpages/Contact";
 import "./globals.css";
-import Navbar from "./Navbar";
 
 export const metadata = {
   title: "Portfolio",
@@ -10,7 +10,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className=" font-sk-modernist">
+      <body className=" font-sk-modernist m-[2%] ">
         <Navbar />
         {children}
         <Contact />
