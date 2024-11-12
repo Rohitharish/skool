@@ -47,8 +47,8 @@ function Contact() {
         .timeline({
           scrollTrigger: {
             trigger: Container,
-            start: "-5%",
-            end: "-1%",
+            start: "-50%",
+            end: "bottom bottom",
             scrub: 5,
           },
         })
