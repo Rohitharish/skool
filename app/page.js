@@ -1,8 +1,6 @@
 "use client";
 import React, { useEffect } from "react";
 import Lenis from "lenis";
-
-import Page from "./pages/Work/page";
 import About from "./pages/About/page";
 
 function Home() {

@@ -3,27 +3,30 @@ import gsap from "gsap";
 import MainText from "../TextAnimations/MainText";
 import TextChange from "../TextAnimations/TextChange";
 import Link from "next/link";
+import Description from "../TextAnimations/Description";
 
 const data = [
   {
     image: "/Profile.jpg",
     title: "MICROSOFT",
     description:
-      "Minimal Gallery    was originally brought   to life when I started",
+      "redesign of the Microsoft Surface  Headphones,    combining Figma ,  Next.js ,GSAP animations,    and  React Three Fiber    3D visuals.",
     Number: "0 0 1",
     link: "https://surface-two.vercel.app/",
   },
   {
     image: "/untitled.png",
     title: "Portfolio",
-    description: "Description for image 2",
+    description:
+      "Portfolio showcasing    creative    designs and    interactive   projects creating dynamic visuals",
     Number: "0 0 2",
     link: "https://jishnu-gamma.vercel.app/",
   },
   {
     image: "/laks.png",
     title: "Astral grid",
-    description: "Description for image 3",
+    description:
+      "A gallery of innovative websites inspired by      Awwwards, featuring   cutting-edge designs and interactive    experiences.",
     Number: "0 0 3",
     link: "https://astral-grid.vercel.app/",
   },
@@ -70,11 +73,9 @@ const GridComponent = () => {
     );
   };
 
-  // Entrance animation
   const animateIn = () => {
     const timeline = gsap.timeline();
 
-    // Reset initial position and opacity
     gsap.set(imageRef.current, { opacity: 0 });
     gsap.set([titleRef.current, descriptionRef.current, numberRef.current], {
       y: -20,
@@ -103,7 +104,7 @@ const GridComponent = () => {
           <React.Fragment key={index}>
             {index === currentIndex && (
               <>
-                <div className="  col-span-12 lg:col-span-7 row-span-2 overflow-hidden h-[50vh] lg:h-[120vh] border-gray-500 border-[.1px]">
+                <div className="  col-span-12 lg:col-span-7 row-span-2 overflow-hidden h-[50vh] lg:h-[120vh] border-[0.5px] border-gray-600">
                   <img
                     src={item.image}
                     alt={item.title}
@@ -112,14 +113,14 @@ const GridComponent = () => {
                   />
                 </div>
 
-                <div className=" col-span-12 lg:col-span-5 flex flex-row items-center justify-center border-gray-500 border-[.1px]">
-                  <div className="flex flex-row relative h-full w-full items-center justify-center border-gray-500 border-[.1px] border-y-0">
+                <div className=" col-span-12 lg:col-span-5 flex flex-row items-center justify-center border-[0.5px] border-gray-600">
+                  <div className="flex flex-row relative h-full w-full items-center justify-center border-[0.5px] border-gray-600 border-y-0">
                     <div
                       className="flex h-[30vh]  lg:h-full items-center justify-center"
                       ref={descriptionRef}
                     >
-                      <MainText
-                        className="  w-[70%] uppercase text-zinc-400 leading-tight "
+                      <Description
+                        className=" text-sm  w-[70%] uppercase text-zinc-400 leading-tight "
                         text={item.description}
                       />
                     </div>
@@ -134,7 +135,7 @@ const GridComponent = () => {
                   </div>
                 </div>
 
-                <div className=" col-span-12 lg:col-span-5 p-[4%] flex items-end justify-end border-gray-500 border-[.1px] lg:border-l-0">
+                <div className=" col-span-12 lg:col-span-5 p-[4%] flex items-end justify-end border-[0.5px] border-gray-600 lg:border-l-0">
                   <div className="flex" ref={titleRef}>
                     <MainText
                       className="text-white text-4xl lg:text-7xl uppercase"
@@ -147,15 +148,15 @@ const GridComponent = () => {
           </React.Fragment>
         ))}
 
-        <div className="h-[20vh] lg:h-full flex items-center col-span-12 lg:col-span-7 text-white border-gray-500 border-[.1px]  text-3xl uppercase">
+        <div className="h-[20vh] lg:h-full flex items-center col-span-12 lg:col-span-7 text-white border-[0.5px] border-gray-600  text-3xl uppercase">
           <div className="flex items-center h-full w-full  border-gray-500 border-r-[.1px] p-4 ">
             <TextChange textArray={Animation} interval={2000} />
           </div>
-          <div className="flex items-center justify-center h-full w-[10%] ">
+          <div className="flex items-center justify-center h-full w-[12%] ">
             <div className="h-4 w-4 rounded-full bg-white "></div>
           </div>
         </div>
-        <div className="h-[20vh] lg:h-full  col-span-12 lg:col-span-5 flex flex-col lg:flex-row text-white border-gray-500 border-[.1px] ">
+        <div className="h-[20vh] lg:h-full  col-span-12 lg:col-span-5 flex flex-col lg:flex-row text-white border-[0.5px] border-gray-600 ">
           <div className="flex text-white justify-end items-center h-full w-full   ">
             <button
               onClick={handleNext}
@@ -164,8 +165,8 @@ const GridComponent = () => {
               NEXT
             </button>
           </div>
-          <div className="flex justify-end items-center h-full w-full  border-gray-500 border-[.1px] text-6xl p-1 md:p-4 lg:p-4 ">
-            <div className=" flex border-gray-500 border-[.1px] p-2">
+          <div className="flex justify-end items-center h-full w-full  border-[0.5px] border-gray-600 text-6xl p-1 md:p-4 lg:p-4 ">
+            <div className=" flex border-[0.5px] border-gray-600 p-2">
               <Link href={data[currentIndex].link}>
                 <img
                   className="object-contain cursor-pointer"

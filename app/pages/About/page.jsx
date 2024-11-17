@@ -25,12 +25,17 @@ function About() {
 
     const master = gsap.timeline();
 
+    const ContainerAnimation = gsap.timeline();
+
+    gsap.fromTo(ContainerG, { opacity: 0 }, { opacity: 1, duration: 4 });
+
     const isLargeScreen = window.matchMedia("(min-width: 1024px)").matches;
 
     if (isLargeScreen) {
       const setinitialposition = () => {
         gsap.set(section1, { yPercent: 0 });
         gsap.set(section2, { yPercent: -5 });
+        gsap.set(ContainerG, { opacity: 0 });
       };
 
       const Finalanimation = () => {
@@ -58,7 +63,10 @@ function About() {
         return tl;
       };
 
-      master.add(setinitialposition).add(Finalanimation);
+      master
+        .add(ContainerAnimation)
+        .add(setinitialposition)
+        .add(Finalanimation);
     }
 
     return () => {
@@ -82,7 +90,7 @@ function About() {
             text="creative web  dev"
           />
         </div>
-        <div className="flex flex-col   h-[50vh]  lg:h-full w-full border-[0.5px] border-gray-600 ">
+        <div className="flex flex-col   h-[50vh]  lg:h-full w-full border-[0.5px] border-gray-600 lg:border-x-0">
           <div className="flex items-start justify-start p-[2%] ">
             <span className="text-sm border-white border-[0.5px] rounded-full px-[2%] py-[.5%]">
               Animation
@@ -92,7 +100,7 @@ function About() {
             <TextChange textArray={Animation} interval={2000} />
           </div>
         </div>
-        <div className="flex flex-col text-6xl  h-[50vh]  lg:h-full w-full border-[0.5px] border-gray-600 ">
+        <div className="flex flex-col text-6xl  h-[50vh]  lg:h-full w-full border-[0.5px] border-gray-600 lg:border-x-0 ">
           <div className="flex items-start justify-start p-[2%] ">
             <span className="text-sm border-white border-[0.5px] rounded-full px-[2%] py-[.5]">
               Design
