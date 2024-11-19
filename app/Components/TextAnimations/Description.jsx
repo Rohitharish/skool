@@ -19,7 +19,7 @@ const Description = ({ text, className }) => {
         opacity: 1,
         duration: 0.4,
         ease: "power2.out",
-        stagger: 0.2,
+        stagger: 0.1,
 
         scrollTrigger: {
           trigger: textRef.current,
