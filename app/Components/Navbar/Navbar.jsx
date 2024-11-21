@@ -3,10 +3,10 @@ import React from "react";
 
 function Navbar() {
   return (
-    <div className="flex  h-full w-full justify-between  text-white py-[1%] px-[.5%] ">
+    <div className="flex  h-full w-full justify-between  text-white py-[1%] px-[.5%]  ">
       <Link href="/">/\</Link>
       <Link
-        className=" flex h-[5vh] items-center justify-center border-[.5px] border-gray-500 px-10  rounded-full"
+        className=" flex h-[5vh] items-center justify-center border-[.5px] border-gray-500 px-10  rounded-full hover:text-black hover:bg-white transition-all ease-in duration-300"
         href="/pages/Work"
       >
         WORK

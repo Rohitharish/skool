@@ -7,7 +7,7 @@ import Description from "../TextAnimations/Description";
 
 const data = [
   {
-    image: "/Microsoft.png",
+    image: "/Port.png",
     title: "MICROSOFT",
     description:
       "redesign of the Microsoft Surface  Headphones,    combining Figma ,  Next.js ,GSAP animations,    and  React Three Fiber    3D visuals.",
@@ -15,7 +15,7 @@ const data = [
     link: "https://surface-two.vercel.app/",
   },
   {
-    image: "/Port.png",
+    image: "/Portfolio.png",
     title: "Portfolio",
     description:
       "Portfolio showcasing    creative    designs and    interactive   projects creating dynamic visuals",
@@ -125,10 +125,10 @@ const GridComponent = () => {
                       />
                     </div>
                   </div>
-                  <div className=" hidden relative w-[40%] h-full  items-end justify-center pb-[10%] overflow-hidden  md:flex lg:flex  ">
+                  <div className=" hidden relative  w-[30%] h-full  items-end justify-center pb-[10%] overflow-hidden  md:flex lg:flex  custom-width-1024 ">
                     <div ref={numberRef}>
                       <MainText
-                        className="text-white text:4xl lg:text-6xl -rotate-90 "
+                        className="text-white text-4xl  lg:text-6xl -rotate-90   "
                         text={item.Number}
                       />
                     </div>

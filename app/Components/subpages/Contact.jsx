@@ -74,8 +74,8 @@ function Contact() {
       className="flex items-center justify-center flex-col h-[100vh] bg-black w-full  "
     >
       {/* SOCIAL MEDIA */}
-      <section className="flex flex-col md:flex-row lg:flex-row h-full w-full items-start justify-start">
-        <div className="relative grid grid-cols-2 grid-rows-2 h-full w-full md:w-1/2 lg:w-full">
+      <section className="flex flex-col md:flex-row  lg:flex-row h-full w-full items-start justify-start">
+        <div className="relative grid grid-cols-2 grid-rows-2 h-full w-full  ">
           {/* border animations */}
           <div
             ref={(el) => (bordersRef.current[0] = el)}
@@ -102,16 +102,16 @@ function Contact() {
             className="absolute top-full h-[1px] w-1/2 bg-gray-600"
           ></div>
           {/* border animations */}
-          <div className="text-4xl text-white flex items-center justify-center h-full w-full overflow-hidden">
+          <div className=" text-2xl md:text-4xl lg:text-4xl text-white flex items-center justify-center h-full w-full overflow-hidden">
             <span ref={(el) => (MediaRef.current[0] = el)}>Twitter</span>
           </div>
-          <div className="text-4xl text-white flex items-center justify-center overflow-hidden">
+          <div className=" text-2xl md:text-4xl lg:text-4xl text-white flex items-center justify-center overflow-hidden">
             <span ref={(el) => (MediaRef.current[1] = el)}>LinkedIn</span>
           </div>
-          <div className="text-4xl text-white flex items-center justify-center overflow-hidden">
+          <div className=" text-2xl md:text-4xl lg:text-4xl text-white flex items-center justify-center overflow-hidden">
             <span ref={(el) => (MediaRef.current[2] = el)}>Instagram</span>
           </div>
-          <div className="text-4xl text-white flex items-center justify-center overflow-hidden"></div>
+          <div className=" text-2xl md:text-4xl lg:text-4xl text-white flex items-center justify-center overflow-hidden"></div>
         </div>
         <div className="flex flex-col h-full w-full items-center justify-center  border-gray-600 border-[.5px]">
           <span className="text-white text-xl">rohitharish276@gmail.com</span>

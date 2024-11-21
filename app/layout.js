@@ -10,7 +10,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className=" font-sk-modernist m-[2%] ">
+      <body className="  font-sk-modernist m-[2%] ">
         <Navbar />
         {children}
         <Contact />
