@@ -93,9 +93,9 @@ function About() {
           ref={SEC1Ref}
           className="flex items-center justify-center flex-col h-full w-full "
         >
-          <div className="flex items-center justify-center h-[50vh] lg:h-[120%] w-full">
+          <div className="flex items-center justify-center h-[50vh] lg:h-[120%] w-full px-[5%] md:px-[0%] lg:px-[0%]">
             <MainText
-              className="text-6xl lg:text-8xl w-3/4 uppercase"
+              className="text-6xl lg:text-8xl w-full md:w-3/4 lg:w-3/4 uppercase"
               text="creative web dev"
             />
           </div>

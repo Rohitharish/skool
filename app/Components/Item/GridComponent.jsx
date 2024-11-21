@@ -7,7 +7,7 @@ import Description from "../TextAnimations/Description";
 
 const data = [
   {
-    image: "/Profile.jpg",
+    image: "/Microsoft.png",
     title: "MICROSOFT",
     description:
       "redesign of the Microsoft Surface  Headphones,    combining Figma ,  Next.js ,GSAP animations,    and  React Three Fiber    3D visuals.",
@@ -15,7 +15,7 @@ const data = [
     link: "https://surface-two.vercel.app/",
   },
   {
-    image: "/untitled.png",
+    image: "/Port.png",
     title: "Portfolio",
     description:
       "Portfolio showcasing    creative    designs and    interactive   projects creating dynamic visuals",
@@ -23,12 +23,12 @@ const data = [
     link: "https://jishnu-gamma.vercel.app/",
   },
   {
-    image: "/laks.png",
+    image: "/Astralgrid.png",
     title: "Astral grid",
     description:
-      "A gallery of innovative websites inspired by      Awwwards, featuring   cutting-edge designs and interactive    experiences.",
+      "[currently building]  A gallery of innovative websites inspired by      Awwwards, featuring   cutting-edge designs and interactive    experiences.",
     Number: "0 0 3",
-    link: "https://astral-grid.vercel.app/",
+    link: "https://www.figma.com/proto/oaM0z8SaT5ywTU3r0BPJnD/Untitled?node-id=210-617&node-type=frame&t=myQpHLCcI1CdAmdt-0&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=210%3A617&share=1",
   },
 ];
 
@@ -160,7 +160,7 @@ const GridComponent = () => {
           <div className="flex text-white justify-end items-center h-full w-full   ">
             <button
               onClick={handleNext}
-              className="   uppercase text-3xl   rounded-none "
+              className=" uppercase text-3xl   rounded-none "
             >
               NEXT
             </button>
